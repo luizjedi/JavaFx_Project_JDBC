@@ -29,6 +29,7 @@
           <TableColumn fx:id="tcId" prefWidth="75.0" text="Id" />
           <TableColumn fx:id="tcName" prefWidth="75.0" text="Name" />
             <TableColumn fx:id="tcEDIT" prefWidth="43.0" />
+            <TableColumn fx:id="tcREMOVE" prefWidth="66.0" />
         </columns>
       </TableView>
    </children>
