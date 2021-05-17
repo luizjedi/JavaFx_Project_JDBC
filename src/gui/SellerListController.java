@@ -2,6 +2,7 @@ package gui;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -48,6 +49,15 @@ public class SellerListController implements Initializable, DataChangeListener {
 
 	@FXML
 	private TableColumn<Seller, String> tcName;
+	
+	@FXML
+	private TableColumn<Seller, Seller> tcEmail;
+	
+	@FXML
+	private TableColumn<Seller, Date> tcBirthDate;
+	
+	@FXML
+	private TableColumn<Seller, Double> tcBaseSalary;
 
 	@FXML
 	private TableColumn<Seller, Seller> tcEDIT;
@@ -83,7 +93,12 @@ public class SellerListController implements Initializable, DataChangeListener {
 
 		tcId.setCellValueFactory(new PropertyValueFactory<>("id"));
 		tcName.setCellValueFactory(new PropertyValueFactory<>("name"));
-
+		tcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		tcBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
+		tcBaseSalary.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
+		Utils.formatTableColumnDate(tcBirthDate, "dd/MM/yyyy");
+		Utils.formatTableColumnDouble(tcBaseSalary, 2);
+		
 		// Método para fazer o TableView realizar o auto ajuste na tela.
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		tvSeller.prefHeightProperty().bind(stage.heightProperty());
