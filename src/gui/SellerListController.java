@@ -58,6 +58,9 @@ public class SellerListController implements Initializable, DataChangeListener {
 	
 	@FXML
 	private TableColumn<Seller, Double> tcBaseSalary;
+	
+	@FXML
+	private TableColumn<Seller, String> tcDepartment;
 
 	@FXML
 	private TableColumn<Seller, Seller> tcEDIT;
@@ -96,6 +99,7 @@ public class SellerListController implements Initializable, DataChangeListener {
 		tcEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 		tcBirthDate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
 		tcBaseSalary.setCellValueFactory(new PropertyValueFactory<>("baseSalary"));
+		tcDepartment.setCellValueFactory(new PropertyValueFactory<>("department"));
 		Utils.formatTableColumnDate(tcBirthDate, "dd/MM/yyyy");
 		Utils.formatTableColumnDouble(tcBaseSalary, 2);
 		
